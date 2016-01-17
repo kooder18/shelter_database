@@ -34,6 +34,15 @@ def descend_alphabet():
     for puppy in puppies:
         print puppy.name
 
+'''
+Function returns a query of puppies that are less
+than 6 months old organized by youngest first
+'''
+def young_pups():
+    puppies = session.query(Puppy).order_by(Puppy.dateOfBirth.desc())
+    for puppy in puppies:
+        print puppy.dateOfBirth
 
 
-ascend_alphabet()
+
+young_pups()
