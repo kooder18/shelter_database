@@ -26,7 +26,7 @@ def ascend_alphabet():
 
 
 '''
-Function returns a query for puppies where the
+Returns a query for puppies where the
 puppy names are in descending alpabetical order
 '''
 def descend_alphabet():
@@ -35,7 +35,7 @@ def descend_alphabet():
         print puppy.name
 
 '''
-Function returns a query of puppies that are less
+Returns a query of puppies that are less
 than 6 months old organized by youngest first
 '''
 def young_pups():
@@ -43,6 +43,20 @@ def young_pups():
     for puppy in puppies:
         print puppy.dateOfBirth
 
+'''
+Returns a query of all puppies by weight
+ascending
+'''
+def puppy_weight():
+    puppies = session.query(Puppy).order_by(Puppy.weight)
+    for puppy in puppies:
+        print puppy.weight
 
+'''
+Returns a query of all puppies grouped by the shelter
+they are staying in
+'''
 
-young_pups()
+def puupy_shelter():
+
+puppy_weight()
