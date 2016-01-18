@@ -39,7 +39,7 @@ Returns a query of puppies that are less
 than 6 months old organized by youngest first
 '''
 def young_pups():
-    puppies = session.query(Puppy).order_by(Puppy.dateOfBirth.desc())
+    puppies = session.query(Puppy).filter(Puppy.dateOfBirth > '2015-07-18').order_by(Puppy.dateOfBirth.desc())
     for puppy in puppies:
         print puppy.dateOfBirth
 
@@ -65,4 +65,4 @@ def puppy_shelter(id):
     print "\n"
 
 
-puppy_shelter(2)
+young_pups()
