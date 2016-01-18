@@ -54,13 +54,15 @@ def puppy_weight():
 
 '''
 Returns a query of all puppies grouped by the shelter
-they are staying in
+they are staying in.function takes an arugment of the shelter_id
 '''
 
-def puppy_shelter():
-    puppies = session.query(Puppy).group_by(Puppy.shelter_id)
+def puppy_shelter(id):
+    puppies = session.query(Puppy).filter_by(shelter_id = id)
     for puppy in puppies:
-        print puppy
+        print puppy.name
+    print "All puppies in shelter ",  id
+    print "\n"
 
 
-puppy_shelter()
+puppy_shelter(2)
