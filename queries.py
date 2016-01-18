@@ -60,6 +60,7 @@ they are staying in
 def puppy_shelter():
     puppies = session.query(Puppy).group_by(Puppy.shelter_id)
     for puppy in puppies:
-        print puppy.name
+        print puppy
+
 
 puppy_shelter()
